@@ -51,6 +51,25 @@ $stateProvider
                 controller: 'HomeController'
             }
         }
-    });
+    })
+    .state('inventory', {
+    url: "/inventory", // root route
+    views: {
+        "testregview": {
+            templateUrl: 'resources/partials/inventory-managment-form.html',
+            controller: 'InventoryController'
+        }
+    }
+    })
+  .state('sales', {
+    url: "/sales", // root route
+    views: {
+        "testregview": {
+            templateUrl: 'resources/partials/sales-form.html',
+            controller: 'SalesController'
+        }
+    }
+    })    
+    ;
    }]);
 

@@ -1226,3 +1226,6 @@ th.control-label-required:before {
 .assessmentFont {
       font-size: 1.00em;
 }
+.input.data-ng-dirty.data-ng-invalid {
+  color: red
+}
