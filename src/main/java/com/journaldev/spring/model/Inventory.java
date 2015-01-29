@@ -2,7 +2,6 @@ package com.journaldev.spring.model;
 
 import java.io.Serializable;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.joda.time.DateTime;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -89,7 +88,5 @@ public class Inventory implements Serializable {
         this.manufactureDate = manufactureDate;
     }
 
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this);
-    }
+ 
 }
