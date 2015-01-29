@@ -1,6 +1,7 @@
 package com.journaldev.spring.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.joda.time.DateTime;
 
@@ -18,7 +19,7 @@ public class Inventory implements Serializable {
     private String serialNo;
     private String category;
     private String productName;
-    private String certificate;
+    private List<String> certificate;
     private String productNumber;
     private String productType;
     private String batchId;
@@ -48,11 +49,11 @@ public class Inventory implements Serializable {
         this.productName = productName;
     }
 
-    public String getCertificate() {
+    public List<String> getCertificate() {
         return certificate;
     }
 
-    public void setCertificate(String certificate) {
+    public void setCertificate(List<String> certificate) {
         this.certificate = certificate;
     }
 
