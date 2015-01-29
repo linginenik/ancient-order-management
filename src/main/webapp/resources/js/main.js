@@ -69,7 +69,6 @@ $stateProvider
             controller: 'SalesController'
         }
     }
-    })    
-    ;
+    });
    }]);
 

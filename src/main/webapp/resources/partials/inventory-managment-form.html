@@ -58,7 +58,7 @@
              <span  class="datepicker"> 
                   <label  class="control-label-required" for="inventory.manufactureDate">Manufacture Date:</label>
                     <span class="icon-chevron-calendar" style="width:14px"></span>
-                    <input type="text" name="inventory.manufactureDate" data-date-parser1 data-datepicker-popup="yyyy-MM-dd"   
+                    <input type="text" name="inventory.manufactureDate" data-date-parser data-datepicker-popup="yyyy-MM-dd"   
                      data-is-open="manufactureDate.isOpen" data-ng-click="manufactureDate.isOpen=true"  data-ng-model="inventory.manufactureDate" />
              </span>  
              {{inventory.manufactureDate}}
@@ -67,7 +67,7 @@
              <span  class="datepicker"> 
                   <label  class="control-label-required" for="inventory.expirationDate">Expiration Date:</label>
                     <span class="icon-chevron-calendar" style="width:14px"></span>
-                    <input type="text" name="expirationDate" data-datepicker-popup="yyyy-MM-dd" 
+                    <input type="text" name="expirationDate" data-date-parser data-datepicker-popup="yyyy-MM-dd" 
                       data-is-open="expiration.isOpen" data-ng-click="expiration.isOpen=true" 
                        data-ng-model="inventory.expirationDate"  data-close-text="Close"/>
              </span>  
@@ -76,7 +76,7 @@
              <span  class="datepicker"> 
                   <label  class="control-label-required" for="inventory.shipmenteDate">Shipment Date:</label>
                     <span class="icon-chevron-calendar" style="width:14px"></span>
-                    <input type="text" name="shipmenteDate" data-datepicker-popup="yyyy-MM-dd" 
+                    <input type="text" name="shipmenteDate" data-date-parser data-datepicker-popup="yyyy-MM-dd" 
                       data-is-open="shipment.isOpen" data-ng-click="shipment.isOpen=true" 
                       data-ng-model="inventory.shipmenteDate"  data-close-text="Close"/>
              </span>  
@@ -85,7 +85,7 @@
              <span  class="datepicker"> 
                   <label  class="control-label-required" for="inventory.receivedDate">Received Date:</label>
                     <span class="icon-chevron-calendar" style="width:14px"></span>
-                    <input type="text" name="receivedDate" data-datepicker-popup="yyyy-MM-dd" 
+                    <input type="text" name="receivedDate" data-date-parser data-datepicker-popup="yyyy-MM-dd" 
                       data-is-open="received.isOpen" data-ng-click="received.isOpen=true" data-datepicker-options="dateOptions"
                         data-ng-model="inventory.receivedDate"  />
              </span>  

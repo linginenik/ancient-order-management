@@ -20,10 +20,17 @@ agro.controller('InventoryController', ['$scope','$location','$window', '$state'
    	  	            return select2Object.id; 
    	  	        },
                 'setPristine': true
-   	   	};       
+   	   	};
+		$scope.setDateFormat=function(object){
+			if(object){
+				alert(object);
+			var dateValue =$filter('date')(object, 'yyyy-MM-dd');
+			$scope.inventory.manufactureDate= dateValue;
+			}
+		};
 		$scope.createInventory = function(inventory){
-			var dateValue =$filter('date')($scope.inventory.manufactureDate, 'yyyy-MM-dd');
-			console.log("AAAA"+dateValue);
+			$scope.setDateFormat($scope.inventory.manufactureDate);
+			
 			InventoryService.save(inventory).then(
 				function(response) {
 					$scope.errors = response.errors;
