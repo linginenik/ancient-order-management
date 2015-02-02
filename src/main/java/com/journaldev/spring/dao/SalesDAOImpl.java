@@ -6,8 +6,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import com.journaldev.spring.model.Sales;
@@ -19,21 +17,9 @@ public class SalesDAOImpl implements SalesDAO {
 
     private SessionFactory sessionFactory;
 
-    @Autowired(required = true)
-    @Qualifier(value = "hibernate4AnnotatedSessionFactory")
     public void setSessionFactory(SessionFactory sf) {
         this.sessionFactory = sf;
     }
-
-    //
-    // @Resource(name = "hibernate4AnnotatedSessionFactory")
-
-    //
-    // private SessionFactory sessionFactory;
-    //
-    // public void setSessionFactory(SessionFactory sf) {
-    // this.sessionFactory = sf;
-    // }
 
     @Override
     public void addSales(Sales p) {

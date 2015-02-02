@@ -33,9 +33,9 @@
                 </ul>
             </div>
             <div class="banner" data-ng-controller="HomeController">                           
-                    <span class="logo"><a href="#" data-ng-click="go('/')")><img data-ng-src="resources/images/logo_sbac.png" class="thumbnail" alt="Logo" name="SBAC_logo"></a></span>
+                    <span class="logo"><a href="#" data-ng-click="go('/')")><img data-ng-src="resources/images/ancientagro-logo.png" class="thumbnail" alt="Logo" name="SBAC_logo"></a></span>
                            
-                    <div class="title"><h1>Ancient Agro </h1></div>
+                    
                     <div class="clear"></div>
                 </div>
             </div>

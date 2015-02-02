@@ -3,6 +3,7 @@ agro.controller('InventoryController', ['$scope','$location','$window', '$state'
 		$scope.errors = [];
 		$scope.categories =InventoryService.loadCatagory();
 		$scope.certificates = InventoryService.loadCertificates();
+		$scope.productTypes=InventoryService.loadProductTypes();
         $scope.convertGradesToSelect2Array = function(certs) {
             return $.map( certs, function(cert) { return { "id":cert, "text":cert }; });
         };

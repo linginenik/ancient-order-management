@@ -9,6 +9,9 @@
     <script src="resources/js/controllers/SalesController.js"></script>
     <script src="resources/js/services/SalesService.js"></script>
     
+    <script src="resources/js/controllers/InvoiceController.js"></script>
+    <script src="resources/js/services/InvoiceService.js"></script>   
+    
     <script src="resources/js/directives/directives.js"></script>
 
    

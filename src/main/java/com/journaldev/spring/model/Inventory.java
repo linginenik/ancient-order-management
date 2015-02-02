@@ -11,9 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.joda.time.DateTime;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -23,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Table(name = "Inventory")
 public class Inventory implements Serializable {
 
-    private static DateTimeFormatter dateFormat = DateTimeFormat.forPattern("yyyy-MM-dd");
+    // private static StringFormatter dateFormat = StringFormat.forPattern("yyyy-MM-dd");
     /**
      * 
      */
@@ -42,10 +39,10 @@ public class Inventory implements Serializable {
     private String productNumber;
     private String productType;
     private String batchId;
-    private DateTime manufactureDate;
-    private DateTime expirationDate;
-    private DateTime shipmenteDate;
-    private DateTime receivedDate;
+    private String manufactureDate;
+    private String expirationDate;
+    private String shipmenteDate;
+    private String receivedDate;
     private String transitDuration;
     // Pallet Details
     private String palletNo;
@@ -117,23 +114,23 @@ public class Inventory implements Serializable {
         this.batchId = batchId;
     }
 
-    public DateTime getManufactureDate() {
+    public String getManufactureDate() {
         return manufactureDate;
     }
 
-    public void setManufactureDate(DateTime manufactureDate) {
+    public void setManufactureDate(String manufactureDate) {
         this.manufactureDate = manufactureDate;
     }
 
-    @JsonProperty
-    public void setManufactureDate(String manufactureDate) {
-        this.manufactureDate = convertDate(manufactureDate);
-    }
+    // @JsonProperty
+    // public void setManufactureDate(String manufactureDate) {
+    // this.manufactureDate = convertDate(manufactureDate);
+    // }
 
-    private DateTime convertDate(String strDate) {
-        return DateTime.parse(strDate, dateFormat);
-
-    }
+    // private String convertDate(String strDate) {
+    // return String.parse(strDate, dateFormat);
+    //
+    // }
 
     public String toString() {
         return ToStringBuilder.reflectionToString(this);
@@ -151,39 +148,39 @@ public class Inventory implements Serializable {
         this.id = id;
     }
 
-    public DateTime getExpirationDate() {
+    public String getExpirationDate() {
         return expirationDate;
     }
 
-    public void setExpirationDate(DateTime expirationDate) {
+    public void setExpirationDate(String expirationDate) {
         this.expirationDate = expirationDate;
     }
 
-    public DateTime getShipmenteDate() {
+    public String getShipmenteDate() {
         return shipmenteDate;
     }
 
-    public void setShipmenteDate(DateTime shipmenteDate) {
+    public void setShipmenteDate(String shipmenteDate) {
         this.shipmenteDate = shipmenteDate;
     }
 
-    @JsonProperty
-    public void setShipmenteDate(String shipmenteDate) {
-        this.shipmenteDate = convertDate(shipmenteDate);
-    }
+    // @JsonProperty
+    // public void setShipmenteDate(String shipmenteDate) {
+    // this.shipmenteDate = convertDate(shipmenteDate);
+    // }
 
-    public DateTime getReceivedDate() {
+    public String getReceivedDate() {
         return receivedDate;
     }
 
-    public void setReceivedDate(DateTime receivedDate) {
+    public void setReceivedDate(String receivedDate) {
         this.receivedDate = receivedDate;
     }
 
-    @JsonProperty
-    public void setReceivedDate(String receivedDate) {
-        this.receivedDate = convertDate(receivedDate);
-    }
+    // @JsonProperty
+    // public void setReceivedDate(String receivedDate) {
+    // this.receivedDate = convertDate(receivedDate);
+    // }
 
     public String getTransitDuration() {
         return transitDuration;

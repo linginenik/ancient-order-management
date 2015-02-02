@@ -26,6 +26,11 @@ agro.factory("InventoryService", function($http,$filter){
 		    return certs;
 		    
 		},
+		loadProductTypes : function(){
+			var certs = new Array("Processed","Raw");
+		    return certs;
+		    
+		},		
 	};
 	return angular.extend(service, BaseService);
 });

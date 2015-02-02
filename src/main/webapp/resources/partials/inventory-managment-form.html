@@ -44,9 +44,12 @@
          </li>      
                  <li>
                 <span> 
-                    <label class="control-label" for="inventory.productType" >Product Type(Raw/Processed): </label>
-                    <input type="checkbox" name="inventory.productType" data-ng-model="inventory.productType" data-ng-true-value="Processed" data-ng-false-value="Raw" />
-                </span>
+                    <label class="control-label" for="inventory.productType" >Product Type: </label>
+						 <select  data-ng-model="inventory.productType" 
+						                     data-ng-options="name for name in productTypes" required>
+						                      <option value="">Select...</option>
+						  </select>                       
+                    </span>
             </li>
          <li>
             <span> 

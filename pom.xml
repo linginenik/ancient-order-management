@@ -4,16 +4,16 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.ancient.agro</groupId>
 	<artifactId>orderManagement</artifactId>
+	<name>orderManagement</name>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-		<name>orderManagement</name>
 	<properties>
 		<java-version>1.6</java-version>
 		<org.springframework-version>4.0.5.RELEASE</org.springframework-version>
 		<org.aspectj-version>1.7.4</org.aspectj-version>
 		<org.slf4j-version>1.7.5</org.slf4j-version>
 		<hibernate.version>4.3.6.Final</hibernate.version>
-		  <jackson.databind-version>2.2.3</jackson.databind-version>
+		  <jackson.databind-version>2.3.0</jackson.databind-version>
 	</properties>
 	<dependencies>
 		<!-- Spring -->
@@ -33,13 +33,7 @@
         <groupId>mysql</groupId>
         <artifactId>mysql-connector-java</artifactId>
         <version>5.1.18</version>
-    </dependency>	
-    	<dependency>
-	<groupId>joda-time</groupId>
-	<artifactId>joda-time</artifactId>
-	<version>2.5</version>
-</dependency>
-    	
+    </dependency>		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -50,11 +44,7 @@
 			<artifactId>spring-tx</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
-			<version>${org.springframework-version}</version>
-		</dependency>		
+		
 		<!-- Hibernate -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -66,6 +56,16 @@
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
+		<dependency>
+		    <groupId>joda-time</groupId>
+		    <artifactId>joda-time</artifactId>
+		    <version>2.5</version>
+		</dependency>
+	<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-lang3</artifactId>
+    <version>3.3.2</version>
+</dependency>
 		
 		<!-- Apache Commons DBCP -->
 		<dependency>
@@ -129,7 +129,30 @@
 			</exclusions>
 			<scope>runtime</scope>
 		</dependency>
-
+    <dependency>
+            <groupId>com.lowagie</groupId>
+            <artifactId>itext</artifactId>
+            <version>2.1.7</version>
+            
+            <exclusions>
+                <exclusion>
+                    <groupId>bouncycastle</groupId>
+                    <artifactId>bcmail-jdk14</artifactId>
+                </exclusion>
+                
+                <exclusion>
+                    <groupId>bouncycastle</groupId>
+                    <artifactId>bcprov-jdk14</artifactId>
+                </exclusion>
+                
+                <exclusion>
+                    <groupId>bouncycastle</groupId>
+                    <artifactId>bctsp-jdk14</artifactId>
+                </exclusion>
+            
+            </exclusions>
+            
+        </dependency>
 		<!-- @Inject -->
 		<dependency>
 			<groupId>javax.inject</groupId>
@@ -163,23 +186,16 @@
 			<version>4.7</version>
 			<scope>test</scope>
 		</dependency>
-	<dependency>
-			<groupId>org.apache.derby</groupId>
-			<artifactId>derby</artifactId>
-			<version>10.11.1.1</version>
-			
-		</dependency>		
     <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.databind-version}</version>
         </dependency>
 <dependency>
-	<groupId>com.fasterxml.jackson.datatype</groupId>
-	<artifactId>jackson-datatype-joda</artifactId>
-	<version>${jackson.databind-version}</version>
-</dependency>
-        
+    <groupId>com.fasterxml.jackson.datatype</groupId>
+    <artifactId>jackson-datatype-joda</artifactId>
+    <version>${jackson.databind-version}</version>
+</dependency>        
 	</dependencies>
     <build>
         <resources>

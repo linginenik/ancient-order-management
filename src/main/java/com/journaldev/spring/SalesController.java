@@ -3,6 +3,7 @@ package com.journaldev.spring;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -20,6 +21,12 @@ public class SalesController {
 
     @Autowired
     private SalesService salesService;
+
+    @Autowired(required = true)
+    @Qualifier(value = "salesService")
+    public void setSalesService(SalesService ps) {
+        this.salesService = ps;
+    }
 
     private static final Logger logger = LoggerFactory.getLogger(SalesController.class);
 

@@ -2,7 +2,6 @@ package com.journaldev.spring.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,8 +11,11 @@ import com.journaldev.spring.model.Sales;
 @Service
 public class SalesServiceImpl implements SalesService {
 
-    @Autowired
     private SalesDAO salesDAO;
+
+    public void setSalesDAO(SalesDAO salesDAO) {
+        this.salesDAO = salesDAO;
+    }
 
     @Override
     @Transactional

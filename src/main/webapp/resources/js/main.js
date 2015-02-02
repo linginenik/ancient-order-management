@@ -69,6 +69,15 @@ $stateProvider
             controller: 'SalesController'
         }
     }
+    })
+.state('invoice', {
+    url: "/invoice", // root route
+    views: {
+        "testregview": {
+            templateUrl: 'resources/partials/invoice-form.html',
+            controller: 'InvoiceController'
+        }
+    }
     });
    }]);
 

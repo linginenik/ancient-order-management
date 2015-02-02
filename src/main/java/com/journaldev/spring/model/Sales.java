@@ -1,6 +1,8 @@
 package com.journaldev.spring.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,21 +10,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.joda.time.DateTime;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Entity
 @Table(name = "Sales")
 public class Sales implements Serializable {
 
-    private static DateTimeFormatter dateFormat = DateTimeFormat.forPattern("yyyy-MM-dd");
+    // private static DateFormatter dateFormat = DateFormat.forPattern("yyyy-MM-dd");
     /**
      * 
      */
@@ -41,14 +40,16 @@ public class Sales implements Serializable {
     private double netPay;
     private double advance;
     private double amoutDue;
-    private DateTime saleDate;
+    private String saleDate;
 
-    private DateTime dueDate;
+    private String dueDate;
+    @Transient
+    private List<Inventory> inventoryList;
 
-    private DateTime convertDate(String strDate) {
-        return DateTime.parse(strDate, dateFormat);
-
-    }
+    // private String convertDate(String strDate) {
+    // return String.parse(strDate, dateFormat);
+    //
+    // }
 
     public String toString() {
         return ToStringBuilder.reflectionToString(this);
@@ -118,29 +119,41 @@ public class Sales implements Serializable {
         this.amoutDue = amoutDue;
     }
 
-    public DateTime getSaleDate() {
+    public String getSaleDate() {
         return saleDate;
     }
 
-    public void setSaleDate(DateTime saleDate) {
+    public void setSaleDate(String saleDate) {
         this.saleDate = saleDate;
     }
 
-    @JsonProperty
-    public void setSaleDate(String saleDate) {
-        this.saleDate = convertDate(saleDate);
-    }
+    // @JsonProperty
+    // public void setSaleDate(String saleDate) {
+    // this.saleDate = convertDate(saleDate);
+    // }
 
-    public DateTime getDueDate() {
+    public String getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(DateTime dueDate) {
+    public void setDueDate(String dueDate) {
         this.dueDate = dueDate;
     }
 
-    @JsonProperty
-    public void setDueDate(String dueDate) {
-        this.dueDate = convertDate(dueDate);
+    @Transient
+    public List<Inventory> getInventoryList() {
+        if (inventoryList == null) {
+            inventoryList = new ArrayList<Inventory>();
+        }
+        return inventoryList;
     }
+
+    public void setInventoryList(List<Inventory> inventoryList) {
+        this.inventoryList = inventoryList;
+    }
+
+    // @JsonProperty
+    // public void setDueDate(String dueDate) {
+    // this.dueDate = convertDate(dueDate);
+    // }
 }
